@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    {% for field, errors in form.errors.items() %}
+    <p style="color: red">
+        {{ form[field].label }}: {{ ', '.join(errors) }}
+    </p>
+    {% endfor %}
+
+    <form method="POST" action="./new">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.id.label }} {{ form.id() }}
+        </div>
+        <div>
+            {{ form.name.label }} {{ form.name(size=20) }}
+        </div>
+        <div>
+            {{ form.level.label }} {{ form.level() }}
+        </div>
+        <div>
+            {{ form.exp.label }} {{ form.exp() }}
+        </div>
+        <div>
+            {{ form.classe.label }} {{ form.classe(size=20) }}
+        </div>
+        <input type="submit" value="Create"/>
+    </form>
+
+</body>
+</html>
