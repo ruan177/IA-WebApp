@@ -6,20 +6,19 @@
 </head>
 <body>
 
-  <table border="1">
+  <table class="table" border="1">
     <thead>
       <tr>
         <td>ID</td>
         <td>Nome</td>
+        <td>Classe</td>
       </tr>
     </thead>
     <tbody>
       {% for character in characters %}
         <tr>
-          <td>{{ character.id }}</td>
+          <td >{{ character.id }}</td>
           <td>{{ character.name }}</td>
-          <td>{{ character.level }}</td>
-          <td>{{ character.exp }}</td>
           <td>{{ character.classe }}</td>
         </tr>
       {% endfor %}

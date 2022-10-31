@@ -3,6 +3,10 @@ flask_sqlalchemy
 flask~=2.2.2
 
 flask_wtf
+mysql-connector-python
 
+flask_login
+
+requests
 
 WTForms~=3.0.1

@@ -1,38 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>IA Web App</title>
-</head>
-<body>
+--<!DOCTYPE html>
+<html lang="en" clas="h-100">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../static/style.css" rel="stylesheet">
+        <link href="../static/styleTxt.css" rel="stylesheet">
+        <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/cover/">
+    </head>
+    <body class="d-flex h-100 text-center text-bg-dark">
+        <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        
+            <header class="mb-auto">
+                <div>
+                <h3 class="float-md-start mb-0">WebApp</h3>
+                <nav class="nav nav-masthead justify-content-center float-md-end">
+                    <ul class="navbar-nav">
+                        {% if current_user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="./character/">Character</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold py-1 px-0" href="#">Episodes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold py-1 px-0" href="#">Locations</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold py-1 px-0" href="{{ url_for('login_blueprint.logout') }}">Logout</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold py-1 px-0" href="{{ url_for('login_blueprint.register') }}">Cadastre-se</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold py-1 px-0" href="./login">Login</a>
+                        </li>
+                         {% endif %}
+                    </ul>
+                </nav>
+                </div>
+            </header>
+            
+        
+        
+            <main>
+                <h1>IA-WebApp.</h1>
+                <p class="lead">Bem vindo ao projeto didático para desenvolvimento
+                    de aplicações web utilizando o framework flask junto
+                    a ferramento ORM SQLAlchemy.</p>
+                <p class="lead">
+                    <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Learn more</a>
+                </p>
+            </main> 
 
-<header>
+            <footer class="mt-auto text-white-50">
+                <p>{{ now }}</p>
+            </footer>
 
-    <menu>
-        <item>
-            <a href="./character/">Personagens</a>
-        </item>
-        <item>###</item>
-        <item>###</item>
-    </menu>
-
-</header>
-
-<div>
-
-    <h1>IA Web App</h1>
-
-    <p>Bem vindo ao projeto didático para desenvolvimento
-        de aplicações web utilizando o framework flask junto
-        a ferramento ORM SQLAlchemy.
-    </p>
-
-</div>
-
-
-<footer>
-    <p>{{ now }}</p>
-</footer>
-
-</body>
+        </div>
+    </body>
 </html>

@@ -1,0 +1,44 @@
+--<!DOCTYPE html>
+<html lang="en" clas="h-100">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../static/style.css" rel="stylesheet">
+        <link href="../static/styleTxt.css" rel="stylesheet">
+        <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/cover/">
+    </head>
+    <body class="d-flex h-100 text-center >
+        <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+
+
+
+
+            <main class="form-signin w-100 m-auto">
+                <form method="POST" action="{{ url_for('login_blueprint.login') }}">
+
+                    <h1 class="h3 mb-3 fw-normal">Sign in</h1>
+                    {{ form.hidden_tag() }}
+                    <div class="form-floating"
+                        {{ form.email.label }} {{ form.email() }}
+                    </div>
+                    <div data-lastpass-icon-root="true" style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;"></div></div>
+                    <div class="form-floating"
+                        {{ form.password.label }} {{ form.password() }}
+                    </div>
+                    <div data-lastpass-icon-root="true" style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;"></div></div>
+                    <div>
+                        {{ form.submit() }}
+                    </div>
+                </form>
+            </main>
+
+
+
+        </div>
+    </body>
+</html>
+
+
+

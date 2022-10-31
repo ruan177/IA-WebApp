@@ -1,4 +1,5 @@
 import os
+import mysql
 
 
 class Config(object):
@@ -16,7 +17,8 @@ class DevelopmentConfig(Config):
 
     TESTING = DEBUG = True
 
-    DATABASE_URI = "sqlite:///:memory:"
+    DATABASE_URI = "mysql+mysqlconnector://root:residentevil6@127.0.0.1/rick_and_morty"
 
     SQLALCHEMY_DATABASE_URI = DATABASE_URI
 
+    SESSION_PROTECTION = "strong"
